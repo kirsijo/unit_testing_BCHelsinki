@@ -68,7 +68,7 @@ Parameters: a and b are numbers
 Returns: the difference of given numbers
 
 -if parameter is missing, throws an exception: `'parameter missing'`
--if both paremeters are given but parameters are not numbers, throws an exception `'only numbers allowed`
+-if both paremeters are given but parameters are not numbers, throws an exception `'only numbers allowed'`
 
 ### Test cases
 
@@ -105,3 +105,24 @@ Returns: the difference of given numbers
 -subtract('','') throws an exception `'only numbers allowed`
 -subtract(null,1) throws an exception `'only numbers allowed`
 -subtract(undefined,1) throws an exception `'only numbers allowed`
+
+## division
+function division(a,b) return a/b
+
+problems:
+
+0/0 => NaN
+2/0 => Infinity
+-2/0 => -Infinity
+
+Infinity/Infinity => NaN
+-Infinity/Infinity => NaN
+Infinity/-Infinity => NaN
+-Infinity/-Infinity => NaN
+
+TestValues:
+
+[0,0,Number.NaN],
+[2,0,Number.POSITIVE_INFINITY],
+[-2,0,Number.NEGATIVE_INFINITY]
+[Number.POSITIVE_INFINITY,Number.POSITIVE_INFINITY,Number.Nan]
