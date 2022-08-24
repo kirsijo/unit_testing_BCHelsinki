@@ -31,6 +31,7 @@ module.exports=class Dice {
     }
 
     roll() {
+        this.dotCount=Math.ceil(Math.random()*this.ubound);
 
     }
 };

@@ -72,3 +72,24 @@ describe("Testing toString", () => {
     expect(dice.toString()).toBe("Not rolled yet");
   });
 });
+
+describe('Testing roll', ()=>{
+  describe('Default upper bound 6', ()=> {
+    const dice = new Dice();
+    test('test when the dice is rolled', ()=>{
+      dice.roll();
+      expect(dice.dots).toBeGreaterThanOrEqual(1);
+      expect(dice.dots).toBeLessThanOrEqual(6);
+    })
+  })
+
+  describe('Create a dice with given upper bound 2-20 and roll it', () => {
+    const testCases=new Array(19).fill(2).map((value, ind)=>[value+ind]);
+    test.each(testCases)('test upper bound %s', ubound=>{
+      const dice=new Dice(ubound);
+      dice.roll();
+      expect(dice.dots).toBeGreaterThanOrEqual(1);
+      expect(dice.dots).toBeLessThanOrEqual(ubound);
+    })
+  })
+})
