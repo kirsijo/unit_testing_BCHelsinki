@@ -63,10 +63,10 @@ describe("Testing toString", () => {
     dice = new Dice();
   });
 
-  // test('dice rolled', ()=>{
-  //   dice.roll();
-  // expect(dice.toString()).toBe(`${dice.dots}`);
-  //});
+  test('dice rolled', ()=>{
+     dice.roll();
+   expect(dice.toString()).toBe(`${dice.dots}`);
+  });
 
   test("dice not rolled yet", () => {
     expect(dice.toString()).toBe("Not rolled yet");
