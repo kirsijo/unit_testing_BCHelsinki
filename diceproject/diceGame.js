@@ -24,3 +24,13 @@ else if(diceA.dots>diceB.dots){
 else {
     console.log('B wins');
 }
+
+console.log('##### array of dices #####');
+const diceArray=[new Dice(), new Dice(), new Dice()];
+
+diceArray.forEach(dice=>console.log(dice.toString()));
+diceArray.forEach(dice=>dice.roll());
+diceArray.forEach(dice => console.log(dice.toString()));
+
+const result=diceArray.reduce((sum,dice)=>sum+dice.dots,0);
+console.log(`Sum of dots is ${result}`);
