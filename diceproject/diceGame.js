@@ -14,3 +14,13 @@ diceA.roll();
 diceB.roll();
 
 console.log(`A:${diceA}, B:${diceB}`);
+
+if(diceA.dots===diceB.dots) {
+    console.log('same dots');
+}
+else if(diceA.dots>diceB.dots){
+    console.log('A wins');
+}
+else {
+    console.log('B wins');
+}
