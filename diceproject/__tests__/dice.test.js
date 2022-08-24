@@ -92,4 +92,5 @@ describe('Testing roll', ()=>{
       expect(dice.dots).toBeLessThanOrEqual(ubound);
     })
   })
+
 })
