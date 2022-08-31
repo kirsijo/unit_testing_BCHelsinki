@@ -94,7 +94,43 @@ describe('Testing getTypes', ()=>{
         const register=new PhoneRegister(testData);
         expect(register.getTypes()).toEqual(["mobile","home"])
 
+    });
+
+});
+
+describe('Testing getPersonsNumbersByType', () => {
+    const register = new PhoneRegister(phones);
+    test('Test 1: work numbers of Leila Hökki', () => {
+        expect(register.getPersonsNumbersByType('Leila', 'Hökki','work')).toEqual(["87654321","05040302"]);
+    })
+    test('Test 2: mobile numbers of Matt River', () => {
+        expect(register.getPersonsNumbersByType('Matt','River','mobile')).toEqual(["045678912"])
+    })
+    test('Test 2B: home numbers of Matt River', () => {
+        expect(register.getPersonsNumbersByType('Matt','River','home')).toEqual(["567890123"])
+    });
+    describe('Test 3: wrong type or name return an empty array', () => {
+        const testData = [
+            ['Matt', 'River','x'],
+            ['Matt', 'x','mobile'],
+            ['x', 'River','mobile']
+        ]
+        test.each(testData)('firstname=%s, lastname=%s,type=%s returns []', (firstname, lastname, type)=> {
+            expect(register.getPersonsNumbersByType(firstname, lastname, type)).toEqual([])
+        })
+    })
+    describe('Test 4: Missing parameter throws an exeption',()=>{
+        test('one parameter missing', () => {
+            expect(()=>register.getPersonsNumbersByType('Matt','River')).toThrow('missing parameter')
+        })
+        test('all parameters missing', () => {
+            expect(()=>register.getPersonsNumbersByType()).toThrow('missing parameter')
+        })
     })
 
+    test('Test 5: if data is empty array (no persons found)', () => {
+        const emptyRegister=new PhoneRegister([]);
+        expect(emptyRegister.getPersonsNumbersByType('Matt','River','mobile')).toEqual([]);
+    })
 })
 
