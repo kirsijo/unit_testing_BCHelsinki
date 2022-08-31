@@ -44,6 +44,10 @@ module.exports = class PhoneRegister{
         else {
             throw new Error ('missing parameter')
         }
+    }// end of getPersonsNumbersBYType
+
+    getAllNumbersByType(type){
+        if (!type) throw new Error('missing parameter')
     }
 
 } // end of class
