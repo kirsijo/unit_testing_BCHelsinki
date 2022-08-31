@@ -14,7 +14,7 @@ describe('Testinf constructor', ()=> {
 })
 
 describe('Testing getTypes', ()=>{
-    test('Test 1: use fault data', ()=>{
+    test('Test 1: use default data', ()=>{
         const register=new PhoneRegister(phones);
         expect(register.getTypes()).toEqual(["home", "work","mobile"]);
     });
