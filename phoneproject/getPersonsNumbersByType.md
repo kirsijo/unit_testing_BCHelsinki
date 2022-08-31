@@ -24,12 +24,22 @@ returns
 
 ### Test 2: mobile numbers of Matt River
 ```js
-register.getPersonsNumbersByType('Leila', 'Hökki','work');
+register.getPersonsNumbersByType('Matt', 'River','mobile');
 ```
 
 return
 ```json
 ["045678912"]
+```
+
+### Test 2: home numbers of Matt River
+```js
+register.getPersonsNumbersByType('Matt', 'River','home');
+```
+
+return
+```json
+["567890123"]
 ```
 
 ### Test 3: wrong type or name return an empty array

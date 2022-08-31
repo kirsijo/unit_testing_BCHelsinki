@@ -41,7 +41,7 @@ return
 ]
 ```
 
-### Test 2: get all mobile numbers using data
+### Test 2A: get all mobile numbers using data
 
 ```js
 register.getAllNumbersBytype('mobile');
@@ -53,6 +53,20 @@ return
     }    
 ]
 ```
+
+### Test 2B: get all home numbers using data
+
+```js
+register.getAllNumbersBytype('home');
+```
+return 
+```json
+[
+    {"firstname":"Matt", "lastname":"River", "number":{"type":"home","tel":"567890123"},
+    }    
+]
+```
+
 
 ### Test 3: type 'x' will return an empty array
 

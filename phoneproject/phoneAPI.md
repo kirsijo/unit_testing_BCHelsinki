@@ -2,7 +2,7 @@
 
 ## Data
 
-The data will be i a json file. Person is uniquely identified by first name and lastname. There can't be two people with the same first and lastname. Phone numbers are also unique.
+The data will be in a json file. Person is uniquely identified by first name and lastname. There can't be two person objects with the same first and lastname. Phone numbers are also unique.
 
 ### phones.json
 
