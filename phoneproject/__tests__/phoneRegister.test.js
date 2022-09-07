@@ -3,7 +3,7 @@
 const phones = require('../phones.json');
 const PhoneRegister = require('../phoneRegister.js');
 
-describe('Testinf constructor', ()=> {
+describe('Testing constructor', ()=> {
     test('Test that the missing parameter throws an exception', () => {
         expect(()=>new PhoneRegister()).toThrow('phone data missing');
     })
@@ -17,6 +17,7 @@ describe('Testing getTypes', ()=>{
     test('Test 1: use default data', ()=>{
         const register=new PhoneRegister(phones);
         expect(register.getTypes()).toEqual(["home", "work","mobile"]);
+        //expect(register.getTypes()).sort().toEqual(["home", "work","mobile"]);
     });
     test('Test 2: persons have no phones', ()=>{
         const testData = [
@@ -31,7 +32,7 @@ describe('Testing getTypes', ()=>{
             }
         ]
         const register=new PhoneRegister(testData);
-        // test data can also be put directly in as a parameter - however using a varible makes it more legible. See below test with empty array.
+        // test data can also be put directly in as a parameter - however using a variable makes it more legible. See below test with empty array.
         expect(register.getTypes()).toEqual([]);
     })
     test('Test 3: no persons in phoneregister', ()=>{
@@ -146,21 +147,17 @@ describe('Testing getAllNumbersByType', () => {
     })
     test('Test 2: get all mobile numbers using data', () => {
         const expectedValue=[
-            {"firstname":"Matt", "lastname":"River", "number":{"type":"mobile","tel":"3214569"},
+            {"firstname":"Matt", "lastname":"River", "number":{"type":"mobile","tel":"045678912"},
             }    
         ]
         expect(register.getAllNumbersByType('mobile')).toEqual(expectedValue);
     })
-    test('Test 2B: get all home numbers using data', () => {
-        const expectedValue=[
-            {"firstname":"Matt", "lastname":"River", "number":{"type":"home","tel":"567890123"},
-            },
-            {
-                "firstname":"Leila",
-                "lastname":"Hökki", "number":{"type":"home", "number":"12345678"}
-            }
+    test('Test 2B: get all home numbers using default data', () => {
+        const expectedValue = [
+            { "firstname": "Leila", "lastname": "Hökki", "number": { "type": "home", "tel": "12345678" } },
+            { "firstname": "Matt", "lastname": "River", "number": { "type": "home", "tel": "567890123" } }
+        ];
 
-        ]
         expect(register.getAllNumbersByType('home')).toEqual(expectedValue);
     })
 
@@ -182,14 +179,18 @@ describe('Testing getAllNumbersByType', () => {
                     {"type":"home"},
                     {"type":"home", "number":"123456654"}
                 ]
+            },
+            {
+                "firstname":"Mary",
+                "lastname":"Smith",
             }
         ]
         const expectedResult = [
             {
-                "firstname":"Vera ",
+                "firstname":"Vera",
                 "lastname":"Jones",
                 "number":
-                    {"type":"home", "number":"123456654"}   
+                    {"type":"home", "tel":"123456654"}   
             }
         ]
         const testregister=new PhoneRegister(testData);

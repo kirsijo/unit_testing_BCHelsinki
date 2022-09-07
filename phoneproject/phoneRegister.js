@@ -47,7 +47,26 @@ module.exports = class PhoneRegister{
     }// end of getPersonsNumbersBYType
 
     getAllNumbersByType(type){
-        if (!type) throw new Error('missing parameter')
-    }
+        if (!type) throw new Error('missing parameter');
+
+        const found=[];
+        for (let person of this.phoneData){
+            if(person.phones) {
+                for(let phone of person.phones){
+                    if(phone.type===type){
+                        if(phone.number && phone.number.length>0){
+                            found.push({firstname:person.firstname,lastname:person.lastname,number:{
+                                type:phone.type, tel:phone.number
+                            }})
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        return found;
+    } // end of get allNUmbersByType
 
 } // end of class

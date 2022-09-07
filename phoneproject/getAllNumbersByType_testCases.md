@@ -81,7 +81,7 @@ register.getAllNumbersBytype();
 ```
 throws an exception `'missing parameter'``
 
-### Test 5: person has type but the corresponding number is missing
+### Test 5: person has type but the corresponding number is missing or person has no phones
 
 testData:
 ```json
@@ -94,6 +94,10 @@ testData:
             {"type":"home"},
             {"type":"home", "number":"123456654"}
         ]
+    },
+    {
+        "firstname":"Mary",
+        "lastname":"Smith",
     }
 ]
 
