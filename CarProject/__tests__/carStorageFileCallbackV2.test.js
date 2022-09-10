@@ -7,7 +7,7 @@ describe('testing callback', ()=>{
         function cb(data){ //cb = callback function
             try{
                 expect(data).toEqual([
-                   { "model": "Bored T-model", "licence": "ABC-1"}
+                    {"model": "Bored T-model", "licence":"ABC-1"}
                 ])
                 done();
             }

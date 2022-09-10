@@ -7,7 +7,7 @@ const fs=require('fs');
 const storageFilePath = './cars.json';
 
 //cbf is a callback function
-module.exports=(cbf,key,value)=>{
+module.exports=(key,value,cbf)=>{
     if(typeof cbf !=='function'){
         throw new Error('callback function missing');
     }
