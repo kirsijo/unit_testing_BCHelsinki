@@ -20,7 +20,7 @@ describe('testing callback', ()=>{
 })
 
 describe('testing the missing callback', () => {
-    test('callback missing throws an exception'), () => {
+    test('callback missing throws an exception', () => {
         expect(()=>search('licence', 'ABC-1')).toThrow('callback function missing')
-    }
+    })
 })
