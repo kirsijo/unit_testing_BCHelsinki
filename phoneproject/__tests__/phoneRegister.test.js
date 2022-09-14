@@ -271,3 +271,26 @@ describe('Test cases for getAllNumbers', () => {
     })
 })
 
+describe('Test cases for getName', () => {
+    const register = new PhoneRegister(phones);
+    test('Test 1: Wrong number', () => {
+        expect(register.getName('0000')).toBeNull();
+    });
+    test('Test 2: parameter missing', () => {
+        expect(register.getName()).toBenull();
+    });
+    test('Test 3: get the name of the number "12345678"', () => {
+        expect(register.getName('12345678')).toEqual({"firstname": "Leila", "lastname": "Hökki"});
+    })
+    describe('Test 3B: get name of the number', () => {
+        const testValues = [
+            ["87654321",{"firstname":"Leila", "lastname":"Hökki"}],
+            ["05040302",{"firstname":"Leila", "lastname":"Hökki"}],
+            ["045678912",{"firstname":"Matt", "lastname":"River"}],
+            ["3214569",{"firstname":"Matt", "lastname":"River"}]
+        ];
+        test.each(testValues)('number %s returns &p')
+        expect(register.getName(test)).toEqual(result);
+    })
+})
+
