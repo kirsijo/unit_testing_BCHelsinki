@@ -33,9 +33,19 @@ async function run(){
     try{
         const result = await search();
         console.log(result);
+        for(let car of result){
+            console.log(car.model.toUpperCase());
+        }
+        const licenceResult=await search('licence', 'ABC-1');
+        if(licenceResult.length>0){
+            console.log(licenceResult[0].model);
+        } else {
+            console.log('no cars found');
+        }
 
     }
     catch(err){
+        console.log(err);
 
     }
 }
