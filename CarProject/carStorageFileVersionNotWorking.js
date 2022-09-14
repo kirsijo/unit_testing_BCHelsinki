@@ -2,6 +2,7 @@
 
 'use strict';
 
+// require as need to read file from disk 
 const fs=require('fs');
 
 const storageFilePath = './cars.json';
