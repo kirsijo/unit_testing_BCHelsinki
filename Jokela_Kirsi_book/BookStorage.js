@@ -37,6 +37,26 @@ module.exports = class BookStorage{
         }
         return null;
     }
+    // end of getInfo
+
+    getTotalPriceOfBooksByAuthor(author){
+        if (!author) throw new Error('missing parameter')
+        let sum = 0;
+        let foundAuthor = false;
+        for(let book of this.bookData) {
+            if(book.author === author) {
+                    foundAuthor = true;
+                    sum += book.price;          
+            }   
+        }
+        if(sum>0){
+            return sum;
+        }
+        if(foundAuthor === false) {
+            return 'nothing found with given'
+        } 
+        
+    }
 
     
 }

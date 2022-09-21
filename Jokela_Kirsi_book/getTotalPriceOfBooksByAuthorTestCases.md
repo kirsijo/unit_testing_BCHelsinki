@@ -16,10 +16,10 @@ returns 200
 # Test 2: return the total price of books for 'Layla Jones'
 
 ```js 
-getTotalPriceofBookByAuthor('Layla Jones')
+getTotalPriceofBooksByAuthor('Layla Jones')
 ```
 
-returns 269
+returns 369
 
 # Test 3: No book found with given search value 
 
@@ -31,6 +31,6 @@ returns `'nothing found with given'`
 # Test 4: Parameter is missing 
 
 ```js 
-getTotalNumberOfBooksByAuthor();
+getTotalPriceOfBooksByAuthor();
 
 throws `'missing parameter'`
