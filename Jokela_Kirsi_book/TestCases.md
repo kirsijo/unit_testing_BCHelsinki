@@ -1,46 +1,8 @@
-# BookStorage API
-
-## Constructor
-
-### **constructor(jsondata)**
-Initializes BookStorage object
-
->Parameters:
->>The data storage json object is passed as a parameter to the constructor.
-
->Returns:
->>
-
->Throws:
->>If the parameter is missing, constructor throws an error `'data storage missing'`
 
 
 ## Methods
 
 
-### **get_All_books_By_author(searchValue)**
-searches books with given author
-
->Parameters:
->>searchValue is the author of the book to be searched
-
->Returns:
->>Returns an array of book objects of given author. If no book of given author is found, returns an empty array.
-
->Throws:
->>If a parameter searchValue is missing, an exeption `'missing parameter'` is thrown
-
-### **get_book_genres(searchKey)**
-Returns an array of book genres. If none found, returns an empty array.
-
->Parameters:
->>searchKey is the bookNumber of the book
-
->Returns:
->>genres of the book as an array or if none is found or it is empty or parameter searchKey is missing, returns an empty array.
-
->Throws:
->>
 
 ### **get_info(searchKey)**
 searches the book matching the searchKey and if match is found returns the info object otherwise null is returned
@@ -55,7 +17,7 @@ searches the book matching the searchKey and if match is found returns the info 
 >>
 
 ### **get_total_price_of_books_by_author(searchValue)**
-returns the total price of all cars that have the same author than the given searchValue
+returns the total price of all books that have the same author than the given searchValue
 
 >Parameters:
 >>searchValue is the author of the book to be searched
