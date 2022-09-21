@@ -19,7 +19,7 @@ returns
 [ "nonfiction","short story","chronic"]
 ```
 
-### Test 2A: number that is not present in th database returns an empty array.
+### Test 2A: number that is not present in the database returns an empty array.
 
 ```js
 storage.getBookgenresByNumber(2000);

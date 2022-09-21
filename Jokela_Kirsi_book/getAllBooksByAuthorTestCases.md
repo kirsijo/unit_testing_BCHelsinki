@@ -93,7 +93,32 @@ For example for author 'Layla Jones'
 
 Before tests create `storage` object from the class BookStorage.
 
-### Test 1: get all books for Layla Jones using default data
+### Test 1: get all books for Felix Harris
+
+```js
+storage.getAllBooksByAuthor('Felix Harris')
+```
+
+return
+
+```json 
+        [
+                {
+                    "bookNumber": 5,
+                    "name": "NoSql - New Hope",
+                    "author": "Felix Harris",
+                    "price": 200,
+                    "amount": 5,
+                    "genres": [
+                      "fiction",
+                      "chronic",
+                      "short story"
+                    ]
+                  }
+        ]
+```
+
+### Test 2: get all books for Layla Jones using default data
 ```js
 storage.getAllBooksByAuthor('Layla Jones')
 ```
@@ -156,14 +181,14 @@ return
 ]
 ```
 
-### Test 2: type 'x' will return an empty array
+### Test 3: author name 'x' which does not exist in the database will return an empty array
 
 ```js
 storage.getAllBooksByAuthor('x');
 ```
 return []
 
-### Test 3: Missing parameter throws an exception
+### Test 4: Missing parameter throws an exception
 
 ```js
 storage.getAllBooksByAuthor();
