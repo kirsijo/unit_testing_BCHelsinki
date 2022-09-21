@@ -119,3 +119,24 @@ describe('Testing getBookGenres', () => {
         expect(storage.getBookGenres()).toEqual([]);
     })
 })
+
+describe('Testing getInfo', () => {
+    test('test 1: get info for book with bookNumber 1', () => {
+        const storage = new BookStorage(books);
+        const expectedResult = {
+            "notes": "collectors edition",
+            "booktype": "hardcover",
+            "edition": "fourth edition"
+          }
+        expect(storage.getInfo(1)).toEqual(expectedResult);
+    })
+    test('test 2A: no parameter returns null', () => {
+        const storage = new BookStorage(books);
+        expect(storage.getInfo()).toEqual(null);
+    })
+    test('test 2B: searchKey with no matching parameter returns null', () => {
+        const storage = new BookStorage(books);
+        expect(storage.getInfo()).toEqual(null);
+    })
+})
+

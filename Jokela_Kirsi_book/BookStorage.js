@@ -27,5 +27,16 @@ module.exports = class BookStorage{
         }
         return found;
     }
+    // end of getBookGenres
+
+    getInfo(bookNumber){
+        for (let book of this.bookData) {
+            if (book.bookNumber === bookNumber) {
+                return book.info;
+            } 
+        }
+        return null;
+    }
+
     
 }
