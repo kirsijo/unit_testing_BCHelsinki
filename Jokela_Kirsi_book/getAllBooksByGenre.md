@@ -13,3 +13,34 @@ For example the genres for bookNumber 3:
 ```js
 storage.getBookGenresByNumber(3);
 ```
+
+returns
+```json
+[ "nonfiction","short story","chronic"]
+```
+
+### Test 2A: number that is not present in th database returns an empty array.
+
+```js
+storage.getBookgenresByNumber(2000);
+```
+
+returns
+```json
+[]
+```
+
+### Test 2B: missing parameter returns an empty array
+
+```js
+storage.getBookgenresByNumber();
+```
+
+returns
+```json
+[]
+```
+
+
+
+
