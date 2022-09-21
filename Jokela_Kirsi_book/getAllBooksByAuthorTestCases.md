@@ -33,7 +33,7 @@ The format of the returned object is:
 
 ```
 
-For example for author Layla Jones
+For example for author 'Layla Jones'
 
 ```json
 [
@@ -90,6 +90,8 @@ For example for author Layla Jones
   }
 ]
 ```
+
+Before tests create `storage` object from the class BookStorage.
 
 ### Test 1: get all books for Layla Jones using default data
 ```js
