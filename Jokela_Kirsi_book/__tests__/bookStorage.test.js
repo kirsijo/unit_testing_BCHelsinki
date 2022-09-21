@@ -110,4 +110,12 @@ describe('Testing getBookGenres', () => {
           ]
         expect(storage.getBookGenres(3)).toEqual(expectedResult)
     })
+    test('test 2A: number not present in the database returns an empty array', () => {
+        const storage = new BookStorage(books);
+        expect(storage.getBookGenres(2000)).toEqual([]);
+    })
+    test('test 2B: missing parameter returns an empty array', () => {
+        const storage = new BookStorage(books);
+        expect(storage.getBookGenres()).toEqual([]);
+    })
 })
