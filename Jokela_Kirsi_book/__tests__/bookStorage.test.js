@@ -140,7 +140,7 @@ describe('Testing getInfo', () => {
     })
 })
 
-// Assuming we are looking for total price of one of each book by author, not the total cost of the entire stock
+// Assuming we are looking for total price of one of each book by author, not the total cost of the entire stock/inventory.
 
 describe('Testing getTotalPriceOfBooksByAuthor',()=>{
     const storage = new BookStorage(books);
@@ -155,6 +155,19 @@ describe('Testing getTotalPriceOfBooksByAuthor',()=>{
     })
     test('Test 4: missing parameter throws an error', () => {
         expect(()=>storage.getTotalPriceOfBooksByAuthor()).toThrow('missing parameter');
+    })
+
+    describe('Testing getPrice', () => {
+        const storage = new BookStorage(books);
+        test('Test 1: testing getPrice for bookNumber 1 ', () => {
+            expect(storage.getPrice(1)).toEqual(123)
+        })
+        test('Test 2: test that no parameter given returns `nothing found with given`', () => {
+            expect(storage.getPrice()).toEqual('nothing found with given')
+        })
+        test('Test 3: test that non-existing bookNumber returns `nothing found with given`', () => {
+            expect(storage.getPrice()).toEqual('nothing found with given')
+        })
     })
 
 })

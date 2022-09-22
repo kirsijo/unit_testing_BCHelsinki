@@ -60,5 +60,14 @@ module.exports = class BookStorage{
     }
     // end of getTotalPriceOfBooksByAuthor
 
+    getPrice(bookNumber){
+        for (let book of this.bookData) {
+            if (book.bookNumber === bookNumber) {
+                return book.price;
+            } 
+        }
+        return 'nothing found with given';
+    }//end of getPrice
     
-}
+    
+} // end of class
