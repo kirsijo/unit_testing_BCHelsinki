@@ -141,20 +141,17 @@ describe('Testing getInfo', () => {
 })
 
 describe('Testing getTotalPriceOfBooksByAuthor',()=>{
+    const storage = new BookStorage(books);
     test('Test 1: get total price of books for Felix Harris', () => {
-        const storage = new BookStorage(books);
         expect(storage.getTotalPriceOfBooksByAuthor('Felix Harris')).toEqual(200);
     })
     test('Test 2: get total price of books for Layla Jones', () => {
-        const storage = new BookStorage(books);
         expect(storage.getTotalPriceOfBooksByAuthor('Layla Jones')).toEqual(369);
     })
     test('Test 3: No books found with given search value', () => {
-        
         expect(storage.getTotalPriceOfBooksByAuthor('Kirsi Jokela')).toEqual('nothing found with given');
     })
     test('Test 4: missing parameter throws an error', () => {
-        const storage = new BookStorage(books);
         expect(()=>storage.getTotalPriceOfBooksByAuthor()).toThrow('missing parameter');
     })
 
