@@ -2,9 +2,9 @@
 
 Returns the total sum of prices per author.
 searchValue is the author of the book to be searched.
-total cumulative price of books matching the searchValue.
+Returns total cumulative price of books matching the searchValue.
 
-if no book with the given searchValue is  found throws an exeption `'nothing found with given'`. If a parameter searchValue is missing, an exeption `'missing parameter'` is thrown.
+If no book with the given searchValue is  found throws an exeption `'nothing found with given'`. If a parameter searchValue is missing, an exeption `'missing parameter'` is thrown.
 
 # Test 1: return the total price of books for 'Felix Harris'
 

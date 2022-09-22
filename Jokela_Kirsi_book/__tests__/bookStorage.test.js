@@ -140,6 +140,8 @@ describe('Testing getInfo', () => {
     })
 })
 
+// Assuming we are looking for total price of one of each book by author, not the total cost of the entire stock
+
 describe('Testing getTotalPriceOfBooksByAuthor',()=>{
     const storage = new BookStorage(books);
     test('Test 1: get total price of books for Felix Harris', () => {

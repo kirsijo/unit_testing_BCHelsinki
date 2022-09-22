@@ -39,6 +39,8 @@ module.exports = class BookStorage{
     }
     // end of getInfo
 
+    // Assuming we are looking for total price of one of each book by author, not the total cost of the entire stock
+
     getTotalPriceOfBooksByAuthor(author){
         if (!author) throw new Error('missing parameter')
         let sum = 0;
@@ -55,8 +57,8 @@ module.exports = class BookStorage{
         if(foundAuthor === false) {
             return 'nothing found with given'
         } 
-        
     }
+    // end of getTotalPriceOfBooksByAuthor
 
     
 }
