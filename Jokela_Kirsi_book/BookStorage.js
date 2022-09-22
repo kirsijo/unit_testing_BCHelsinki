@@ -66,7 +66,7 @@ module.exports = class BookStorage{
                 return book.price;
             } 
         }
-        return 'nothing found with given';
+        throw new Error ('nothing found with given');
     }//end of getPrice
     
     

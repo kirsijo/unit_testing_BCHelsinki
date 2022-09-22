@@ -163,10 +163,10 @@ describe('Testing getTotalPriceOfBooksByAuthor',()=>{
             expect(storage.getPrice(1)).toEqual(123)
         })
         test('Test 2: test that no parameter given returns `nothing found with given`', () => {
-            expect(storage.getPrice()).toEqual('nothing found with given')
+            expect(()=>storage.getPrice()).toThrow('nothing found with given')
         })
         test('Test 3: test that non-existing bookNumber returns `nothing found with given`', () => {
-            expect(storage.getPrice()).toEqual('nothing found with given')
+            expect(()=>storage.getPrice(1000)).toThrow('nothing found with given')
         })
     })
 
