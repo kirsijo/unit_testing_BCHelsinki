@@ -6,7 +6,7 @@ Returns an array of book objects of given author. If no book of given author is 
 
 SearchValue is the author of the book to be searched.
 
-If a parameter searchValue is missing, an exeption `'missing parameter'` is thrown.
+If a parameter searchValue is missing, an exception `'missing parameter'` is thrown.
 
 The format of the returned object is:
 
