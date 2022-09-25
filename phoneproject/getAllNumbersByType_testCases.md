@@ -75,7 +75,7 @@ register.getAllNumbersBytype('x');
 ```
 return []
 
-### Test 4: missing parameter parameter throws an exception
+### Test 4: missing parameter throws an exception
 ```js
 register.getAllNumbersBytype();
 ```

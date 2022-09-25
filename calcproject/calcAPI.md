@@ -38,10 +38,10 @@ sum(10,11.5) return 21.5
 
 #### 3. Missing parameter
 
-- sum() thow an expection `'parameter missing'`
-- sum(1) thow an expection `'parameter missing'`
-- sum('a') thow an expection `'parameter missing'`
-- sum('') thow an expection `'parameter missing'`
+- sum() throw an exception `'parameter missing'`
+- sum(1) throw an exception `'parameter missing'`
+- sum('a') throw an exception `'parameter missing'`
+- sum('') throw an exception `'parameter missing'`
 
 #### 4. Parameters are not numbers
 
