@@ -5,7 +5,7 @@ const BookStorage = require('../BookStorage');
 
 describe('Testing constructor', () => {
     test('Test that the missing data throws an exception', () => {
-        expect(()=> new BookStorage().toThrow('phone data missing'))
+        expect(()=> new BookStorage().toThrow('data storage missing'))
     })
 })
 
